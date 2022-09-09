@@ -150,12 +150,11 @@ public class Main {
         
         int pum = 0;
         for(int i = 0; i < 10; i++) {
-            for (int g = 0; g < 10; g++) {
-                if (arr[g] > arr[i]) {
+            for (int g = i; g < 10; g++) {
+                if (arr[g] < arr[i]) {
                     pum = arr[i];
                     arr[i] = arr[g];
                     arr[g] = pum;
-                    continue;
                 }
             }
         }
