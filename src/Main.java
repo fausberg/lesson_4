@@ -167,7 +167,10 @@ public class Main {
     public static void Task_5() {
         Scanner scanner = new Scanner(System.in);
         int k;
+        int sum_ch = 0;
+        int sum_ch1 = 0;
         int sum;
+        int sum_2 = 0;
         int sum_1 = 0;
         int n = scanner.nextInt();
         for (int i = 0; i <= n; i++) {
@@ -175,12 +178,48 @@ public class Main {
                 sum_1 += i;
             }
         }
-        n += 1;
-        k = n / 2;
-        sum = k * k;
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 1) {
+                sum_2 += i;
+            }
+        }
+        for (int i = 0; i <= n; i++) {
+            if (i % 2 == 0) {
+                sum_ch += i;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                sum_ch1 += i;
+            }
+        }
 
-        System.out.println(sum);
+        //если последнее число идёт в сумму
+        if(n % 2 == 0){
+            int n1 = 2;
+            sum = (n1+n)/2*n/2;
+            System.out.println(sum);
+            System.out.println(sum_ch);
+        }else{
+            int n1 = 1;
+            sum = (n1 + n)/2*(n + 1)/2;
+            System.out.println(sum);
+            System.out.println(sum_1);
+        }
+
         System.out.println();
-        System.out.println(sum_1);
+
+        //если последнее число не идёт в сумму
+        if(n % 2 == 0){
+            int n1 = 2;
+            sum = (n - n1)/2*n/2;
+            System.out.println(sum);
+            System.out.println(sum_ch1);
+        }else{
+            int n1 = 1;
+            sum = (n - n1)/2*(n - 1)/2;
+            System.out.println(sum);
+            System.out.println(sum_2);
+        }
     }
 }
