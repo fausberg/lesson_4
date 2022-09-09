@@ -7,7 +7,8 @@ public class Main {
         //Task_1();
         //Task_2();
         //Task_3();
-        Task_4();
+        //Task_4();
+        Task_5();
     }
 
     public static void Task_1() {
@@ -54,7 +55,7 @@ public class Main {
         int n = scanner.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = random.nextInt(50) + 100 ;
+            arr[i] = random.nextInt(50) + 100;
             System.out.print(arr[i] + " ");
         }
 
@@ -64,14 +65,14 @@ public class Main {
 
         int min = arr[0];
 
-        for(int i = 0; i < n; i++){
-            if(max < arr[i]){
+        for (int i = 0; i < n; i++) {
+            if (max < arr[i]) {
                 max = arr[i];
             }
         }
 
-        for(int i = 0; i < n; i++){
-            if(min > arr[i]){
+        for (int i = 0; i < n; i++) {
+            if (min > arr[i]) {
                 min = arr[i];
             }
         }
@@ -79,8 +80,8 @@ public class Main {
         int in_min = 0;
         int in_max = 0;
 
-        for(int i = 0; i < n; i++){
-            if(min == arr[i]){
+        for (int i = 0; i < n; i++) {
+            if (min == arr[i]) {
                 in_min = i;
             } else if (max == arr[i]) {
                 in_max = i;
@@ -89,9 +90,9 @@ public class Main {
 
         int kol = 0;
 
-        if(in_max > in_min){
+        if (in_max > in_min) {
             kol = in_max - in_min - 1;
-        }else{
+        } else {
             kol = in_min - in_max - 1;
         }
 
@@ -106,18 +107,18 @@ public class Main {
         System.out.println(kol);
     }
 
-    public static void Task_3(){
+    public static void Task_3() {
         String[] arr = new String[]{"fadf", "feafds", "gdhgff"};
         int[] arr_1 = new int[5];
         Random random = new Random();
 
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             arr_1[i] = random.nextInt(10);
         }
 
         System.out.println(Arrays.toString(arr_1)); // вывод массива в строку с квадратными скобками
 
-        for(String it: arr){        //foreach  перебор массива без индекса
+        for (String it : arr) {        //foreach  перебор массива без индекса
             System.out.println(it);
         }
 
@@ -129,7 +130,7 @@ public class Main {
         System.out.println(Arrays.toString(arr_1));
     }
 
-    public static void Task_4(){
+    public static void Task_4() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 //       // int n = scanner.nextInt();
@@ -143,13 +144,13 @@ public class Main {
 
         int[] arr = new int[10];
 
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             arr[i] = random.nextInt(10);
         }
         System.out.println(Arrays.toString(arr));
-        
+
         int pum = 0;
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             for (int g = i; g < 10; g++) {
                 if (arr[g] < arr[i]) {
                     pum = arr[i];
@@ -161,5 +162,25 @@ public class Main {
 
         System.out.println(Arrays.toString(arr));
 
+    }
+
+    public static void Task_5() {
+        Scanner scanner = new Scanner(System.in);
+        int k;
+        int sum;
+        int sum_1 = 0;
+        int n = scanner.nextInt();
+        for (int i = 0; i <= n; i++) {
+            if (i % 2 == 1) {
+                sum_1 += i;
+            }
+        }
+        n += 1;
+        k = n / 2;
+        sum = k * k;
+
+        System.out.println(sum);
+        System.out.println();
+        System.out.println(sum_1);
     }
 }
